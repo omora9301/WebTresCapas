@@ -1,0 +1,28 @@
+﻿@model EntityPersona.EntPersona
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+@if (TempData["resu"] != null)
+{
+    <h5>@TempData["resu"]</h5>
+}
+@if (TempData["error"] != null)
+{
+    <h5>@TempData["error"]</h5>
+}
+<form action="/" method="post" class="form-control">
+    <table>
+        <tr>
+            <td><input type="hidden" name="id" value="@Model.Id" /></td>
+            <td><input type="text" name="nombre" value="@Model.Nombre" placeholder="Nombre" class="form-control" /></td>
+            <td><input type="text" name="paterno" value="@Model.Paterno" placeholder="A. Paterno" class="form-control" /></td>
+            <td><input type="text" name="materno" value="@Model.Materno" placeholder="A.Materno" class="form-control" /></td>
+            <td><input type="number" name="edad" value="@Model.Edad" placeholder="Edad" class="form-control" /></td>
+            <td><input type="submit" name="name" value="Actualizar" formaction="/Home/ActualizaPersona" class="btn btn-outline-success " /></td>
+        </tr>
+    </table>
+
+</form>
+

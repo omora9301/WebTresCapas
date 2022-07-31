@@ -1,0 +1,32 @@
+﻿@using System.Data
+@model EntityPersona.EntPersona
+@{
+    ViewBag.Title = "FormEditar";
+}
+
+<h2>FormEditar</h2>
+@if (TempData["resu"] != null)
+{
+    <h5 class="alert alert-success">@TempData["resu"]</h5>
+}
+@if (TempData["error"] != null)
+{
+    <h5 class="alert alert-danger">@TempData["error"]</h5>
+}
+<form action="/" method="post" class="">
+    <table>
+        <tr>
+            <td><input type="hidden" name="id" value="@Model.Id" /></td>
+            <td><input type="text" name="Nombre" value="@Model.Nombre" class="form-control" /></td>
+            <td><input type="text" name="Paterno" value="@Model.Paterno" class="form-control" /></td>
+            <td><input type="text" name="Materno" value="@Model.Materno" class="form-control" /></td>
+            <td><input type="number" name="Edad" value="@Model.Edad" class="form-control" /></td>
+            <td>@Html.DropDownList("EstadoCivil", null, "Seleccionar", new { @class = "form-control" })</td>
+            <td><input type="submit" name="name" value="Actualizar" formaction="/Home/ActualizaPersona" class="btn btn-outline-success " /></td>
+        </tr>
+    </table>
+
+</form>
+
+
+
